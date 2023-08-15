@@ -23,6 +23,9 @@ class HomeController extends Controller
     }
     public function view_article(string $slug)
     {
-        dd($slug);
+        $post = Post::with('user:id,name,avatar')->where('slug', $slug)->first();
+        return Inertia::render("Article", [
+            "post" => $post
+        ]);
     }
 }

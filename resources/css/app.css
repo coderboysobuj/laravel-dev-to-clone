@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+pre div {
+    background: #0c0c0d !important;
+}
+
 
 
 @layer base {
