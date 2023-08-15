@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/aricle/{slug}', [HomeController::class, 'view_article'])->name('article.view');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -27,7 +28,7 @@ Route::resource('/chirps', ChirpController::class)
     ->middleware(['auth', 'verified']);
 
 Route::resource('/posts', PostController::class)
-    ->only('index', 'store')
+    ->only('index', 'store', 'show')
     ->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {

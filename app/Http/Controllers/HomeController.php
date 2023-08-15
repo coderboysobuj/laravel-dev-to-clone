@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use Inertia\Inertia;
@@ -21,5 +20,9 @@ class HomeController extends Controller
             'phpVersion' => PHP_VERSION,
             'posts' => $posts
         ]);
+    }
+    public function view_article(string $slug)
+    {
+        dd($slug);
     }
 }

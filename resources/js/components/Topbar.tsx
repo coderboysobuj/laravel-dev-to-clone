@@ -15,7 +15,7 @@ import {
 
 export const Topbar = ({ user }: { user?: User }) => {
     return (
-        <header className="h-header bg-primary-foreground">
+        <header className="h-header sticky bg-opacity-30 z-10 top-0 w-full left-0 backdrop-filter backdrop-blur-lg bg-primary-foreground">
             <div className="container h-full flex items-center justify-between">
                 <div className='flex items-center gap-4'>
                     <Link href='/'>
